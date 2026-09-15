@@ -1,0 +1,11 @@
+{
+  "name": "koch-foods-fantasy-football-news",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.0.0"
+  }
+}
