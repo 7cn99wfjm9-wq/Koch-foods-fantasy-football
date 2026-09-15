@@ -41,7 +41,7 @@ export default async () => {
     const prev = games.filter(g => g.period === previousWeek);
 
     const byId = new Map(teams.map(t => [t.id, t]));
-    const played = prev.filter(g => g.homeScore > 0 || g.awayScore > 0).map(g => {
+    const played = prev.filter(g => Number.isFinite(Number(g.homeScore)) && Number.isFinite(Number(g.awayScore))).map(g =>
       const home = byId.get(g.homeId) || {id:g.homeId,name:`Team ${g.homeId}`};
       const away = byId.get(g.awayId) || {id:g.awayId,name:`Team ${g.awayId}`};
       const margin = Math.abs(g.homeScore - g.awayScore);
